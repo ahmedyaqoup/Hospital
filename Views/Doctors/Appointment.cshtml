@@ -1,0 +1,33 @@
+﻿<div class="row">
+    <div class="col-9">
+     <h1>All Appointment</h1>
+    </div>
+   <table class="table">
+      <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">date</th>
+            <th scope="col">time</th>
+        </tr>
+      </thead>
+      <tbody>
+    
+          @{
+              foreach(var item in Model){
+                <tr>
+                  
+                  <td scope="row">@item.Id</td>
+                  <td scope="row">@item.PatientName</td>
+                  <td scope="row">@item.AppointmentDate</td>
+                  <td scope="row">@item.AppointmentTime</td>
+               
+                 </tr>
+              }
+          }
+
+
+
+      </tbody>
+   </table>
+</div>

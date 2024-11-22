@@ -1,0 +1,174 @@
+﻿
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Appointment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+
+        /* Modal container styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Modal content styles */
+        .modal {
+            background-color: wheat;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Close button styles */
+        .modal-content {
+            color: red;
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+    <body>
+        <h1 style="text-align:center">Compelet Appointment With @Model.Name   </h1>
+    <form action="/Doctors/CreateAppointment" method="post">
+        <!-- Patient Name -->
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="PatientName" placeholder="Enter patient name" required>
+
+        <!-- AppointmentDate -->
+        <label for="appointmentDate">Appointment Date:</label>
+        <input type="date" id="appointmentDate" name="AppointmentDate" required>
+
+        <!-- AppointmentTime -->
+        <label for="appointmentTime">Appointment Time:</label>
+        <input type="time" id="appointmentTime" name="AppointmentTime" required>
+
+        <!-- Submit Button -->
+        <!-- <button type="submit">Submit</button> -->
+        <button type="submit" id="complete-appointment">Complete Appointment</button>
+
+        <a href="https://localhost:7043/Doctors/Appointment" type="button" class="btn btn-primary">Go TO Appointment...</a>
+    </form>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Appointment Compeleted</h2>
+            <hr />
+            <p>Your appointment has been successfully.thank you.</p>
+        </div>
+    </div>
+    <script>
+
+        var modal = document.getElementById("myModal");
+
+        var btn = document.getElementById("complete-appointment");
+
+        var span = document.getElementById("close-modal");
+        
+
+             btn.onclick = function () {
+            
+
+            modal.style.display = "block";
+
+        }
+
+        span.onclick = function () {
+
+            modal.style.display = "none";
+
+        }
+
+        window.onclick = function (event) {
+
+            if (event.target == window) {
+
+                modal.style.display = "none";
+                
+            }
+
+        }
+    </script>
+
+
+  </body>
+    
+
+  
+</html>
+
+
+
+
+
+
